@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 248, 250, 252;
+}
+
+html, body {
+  background-color: #030711;
+  color: #f8fafc;
+  overflow-x: hidden;
+  /* 优化字体渲染 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 细腻的星尘背景 */
+.star-bg {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #ffffff 50%, transparent),
+    radial-gradient(1px 1px at 40px 70px, #ffffff 50%, transparent),
+    radial-gradient(1px 1px at 50px 160px, #ffffff 50%, transparent),
+    radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent),
+    radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.15;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* 顶部光晕 */
+.top-glow {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
