@@ -50,26 +50,24 @@ export const Hero = () => {
           {t.subhead}
         </motion.p>
 
-        {/* Buttons with Pop Effect */}
+        {/* Buttons with Pop Effect - Unified Style */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-6"
         >
-          <button className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.4)]">
-            <span className="relative z-10 flex items-center gap-2">
-              {t.cta_primary} <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative z-10 flex items-center gap-2 text-white absolute inset-0 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {t.cta_primary} <Download className="w-5 h-5" />
-            </span>
-          </button>
+          <a 
+            href="/resume.pdf" 
+            download="闵徐舜杰_简历.pdf"
+            className="group px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all hover:scale-110 active:scale-95 backdrop-blur-sm flex items-center gap-2 justify-center"
+          >
+            {t.cta_primary} <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+          </a>
           
           <button 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all hover:scale-110 active:scale-95 backdrop-blur-sm flex items-center gap-2"
+            className="group px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all hover:scale-110 active:scale-95 backdrop-blur-sm flex items-center gap-2 justify-center"
           >
             {t.cta_secondary} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
