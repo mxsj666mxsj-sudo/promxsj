@@ -65,3 +65,5 @@ export const ScrambleText = ({ text, className, trigger = true }: Props) => {
   );
 };
 
+
+
