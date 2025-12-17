@@ -3,49 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --foreground: 248, 250, 252;
+  --foreground: 255, 255, 255;
 }
 
 html, body {
-  background-color: #030711;
-  color: #f8fafc;
+  background-color: #0a0a0a;
+  color: white;
   overflow-x: hidden;
-  /* 优化字体渲染 */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 细腻的星尘背景 */
-.star-bg {
-  background-image: 
-    radial-gradient(1px 1px at 20px 30px, #ffffff 50%, transparent),
-    radial-gradient(1px 1px at 40px 70px, #ffffff 50%, transparent),
-    radial-gradient(1px 1px at 50px 160px, #ffffff 50%, transparent),
-    radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent),
-    radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent);
-  background-size: 200px 200px;
-  background-repeat: repeat;
-  opacity: 0.15;
+/* 多彩流动背景 */
+.colorful-bg {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
-  pointer-events: none;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  background: #0a0a0a;
+  overflow: hidden;
 }
 
-/* 顶部光晕 */
-.top-glow {
-  position: fixed;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+.colorful-blob {
+  position: absolute;
   filter: blur(80px);
-  z-index: -1;
-  pointer-events: none;
+  opacity: 0.4;
+  animation: blob 10s infinite;
+  border-radius: 50%;
+}
+
+.blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #d946ef; animation-delay: 0s; }
+.blob-2 { top: 20%; right: -10%; width: 400px; height: 400px; background: #06b6d4; animation-delay: 2s; }
+.blob-3 { bottom: -10%; left: 20%; width: 600px; height: 600px; background: #3b82f6; animation-delay: 4s; }
+
+/* 玻璃态卡片增强 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }

@@ -6,21 +6,22 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen selection:bg-neon-pink selection:text-white">
       <Navbar />
       <Hero />
       <About />
       <Experience />
       <Contact />
       
-      <footer className="py-12 border-t border-white/5 bg-background relative z-10">
+      <footer className="py-12 border-t border-white/5 bg-black/80 backdrop-blur-md relative z-10">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p className="text-sm text-muted/40 font-mono">
+          <p className="text-sm text-white/40 font-mono font-bold">
             © 2025 MINXUSHUNJIE.
           </p>
-          <p className="text-xs text-muted/30">
-            Design inspired by Vercel & Linear
-          </p>
+          <div className="flex items-center gap-2 text-xs font-bold text-white/30 uppercase tracking-widest">
+            <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
+            Cyber-Pop Edition
+          </div>
         </div>
       </footer>
     </main>
